@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="isQuizStarted">
+    <div class="quiz-container" v-if="isQuizStarted">
       <div>{{ operandLeft }} {{ operator }} {{ operandRight }}</div>
       <button
         @click="selectAnswer(answer)"
@@ -10,10 +10,10 @@
         {{ answer }}
       </button>
     </div>
-    <div v-if="!isQuizStarted">
-      <button @click="startQuiz">Start</button>
+    <div class="start-container" v-if="!isQuizStarted">
+      <button class="start-button" @click="startQuiz">Start</button>
     </div>
-    <button @click="$emit('onBack')">Back</button>
+    <button class="back-button" @click="$emit('onBack')">Back</button>
   </div>
 </template>
 
@@ -91,4 +91,42 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.start-button,
+.back-button {
+  margin-top: 20px;
+}
+
+.start-button {
+  width: 120px;
+  height: 50px;
+  font-size: 20px;
+  background-color: #48d1cc;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+  background-color: #f44336;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.start-container {
+  display: flex;
+  justify-content: center;
+}
+</style>

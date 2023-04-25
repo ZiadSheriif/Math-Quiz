@@ -1,6 +1,8 @@
 <template>
-  <Navbar />
-  <header><h1 class="header">Math Quiz App</h1></header>
+  <header>
+    <h1>Math Quiz App</h1>
+  </header>
+
   <OperatorQuiz @onBack="clearOperators" v-if="operator" :operator="operator" />
   <OperatorSelector v-if="!operator" @changeOperator="changeOperator" />
 </template>
@@ -31,14 +33,21 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 h1 {
   color: #400040;
   font-weight: italic;
   font-weight: 500;
+}
+header {
+  background-color: #48d1cc;
+  top: 0;
+  height: 80px;
+  display: flex; /* set display to flex */
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+  margin-bottom: 30px;
 }
 </style>
