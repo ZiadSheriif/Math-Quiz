@@ -1,24 +1,15 @@
+//? $emit To emit an event from the child component
 <template>
   <div class="button-box">
-    <button @click="$emit('changeOperator', '+')">Addition (+)</button>
-    <button @click="$emit('changeOperator', '-')">Subtraction (-)</button>
-    <button @click="$emit('changeOperator', '*')">Multiplication (*)</button>
-    <button @click="$emit('changeOperator', '/')">Division (/)</button>
+    <button @click="$emit('changeOperator', '+')">Addition <br />+</button>
+    <button @click="$emit('changeOperator', '-')">Subtraction <br />-</button>
+    <button @click="$emit('changeOperator', '*')">Multiplication <br />*</button>
+    <button @click="$emit('changeOperator', '/')">Division <br />/</button>
   </div>
 </template>
 
 <script>
-export default {
-  name: "App",
-  data() {
-    return { operator: null };
-  },
-  methods: {
-    selectOperator(operator) {
-      this.operator = operator;
-    },
-  },
-};
+export default {};
 </script>
 
 <style>
@@ -34,7 +25,8 @@ button {
   height: 100px;
   cursor: pointer;
 }
-button:hover {
+button:hover,
+:focus {
   border: #0000;
 }
 .button-box {
