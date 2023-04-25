@@ -1,17 +1,22 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <header><h1 class="header">Math Quiz App</h1></header>
+  <OperatorSelector @changeOperator="changeOperator" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import OperatorSelector from "./components/OperatorSelector.vue";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  data() {
+    return { operator: null };
+  },
+  methods: {
+    changeOperator(operator) {
+      this.operator = operator;
+    },
+  },
+  components: { OperatorSelector },
+};
 </script>
 
 <style>
@@ -22,5 +27,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+h1 {
+  color: #400040;
+  font-weight: italic;
+  font-weight: 500;
 }
 </style>
