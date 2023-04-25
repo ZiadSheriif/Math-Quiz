@@ -1,4 +1,5 @@
 <template>
+  <Navbar />
   <header><h1 class="header">Math Quiz App</h1></header>
   <OperatorQuiz @onBack="clearOperators" v-if="operator" :operator="operator" />
   <OperatorSelector v-if="!operator" @changeOperator="changeOperator" />
@@ -7,6 +8,7 @@
 <script>
 import OperatorSelector from "./components/OperatorSelector.vue";
 import OperatorQuiz from "./components/OperatorQuiz.vue";
+import Navbar from "./components/Navbar.vue";
 export default {
   name: "App",
   data() {
